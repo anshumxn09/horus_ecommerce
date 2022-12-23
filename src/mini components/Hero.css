@@ -1,0 +1,55 @@
+.heroContainer{
+    min-width: 100%;
+    max-width: 100%;
+    min-height: max-content;
+    background-color: whitesmoke;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 40px;
+    flex-wrap: wrap;
+}
+
+.hContent{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.hContent > a{
+    text-decoration: none;
+    color: white;
+    text-align: center;
+    background: linear-gradient(#EA8D8D, #A890FE);
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+
+.hContent > a:hover{
+    background: none;
+    box-shadow: rgba(240, 46, 170, 0.4) -5px 5px, rgba(240, 46, 170, 0.3) -10px 10px, rgba(240, 46, 170, 0.2) -15px 15px, rgba(240, 46, 170, 0.1) -20px 20px, rgba(240, 46, 170, 0.05) -25px 25px;
+    transition: all 0.5s linear;
+    color: black;
+}
+.hContent > p{
+    color: grey;
+}
+.hContent > *{
+    width: 100%;
+    text-transform: uppercase;
+    margin: 1px 0px;
+}
+.heroContainer > img{
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    margin: 10px 10px;
+}
+
+@media screen and (max-width:475px) {
+    .heroContainer > img{
+        width: 350px;
+        height: 220px;
+        margin-top: 20px;
+    }
+}

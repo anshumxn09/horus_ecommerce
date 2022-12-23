@@ -6,7 +6,9 @@ import Contact from './components/Contact';
 import Home from './components/Home';
 import Navbar from './components/Navbar';
 import NotFound from './components/NotFound';
+import ProductDetails from './components/ProductDetails';
 import Products from './components/Products';
+import Footer from './mini components/Footer';
 const App = () => {
   return (
     <Router>
@@ -16,10 +18,11 @@ const App = () => {
         <Route path='/about' element={<About/>}/>
         <Route path='/contact' element={<Contact/>}/>
         <Route path='/products' element={<Products/>}/>
-        <Route path='/details/:id' element={<Products/>}/>
+        <Route path='/details/:id' element={<ProductDetails/>}/>
         <Route path='/cart' element={<Cart/>}/>
         <Route path='*' element={<NotFound/>}/>
       </Routes>
+      <Footer/>
     </Router>
   )
 }

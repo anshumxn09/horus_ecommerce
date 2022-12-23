@@ -10,6 +10,7 @@ const Navbar = () => {
     setHamburger(!hamburger);
     if(hamburger) setResponsive("");
     else setResponsive("navHidden");
+    // console.log(hamburger);
   }
 
   const makeHidden = () => {

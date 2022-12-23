@@ -1,0 +1,16 @@
+.notfoundContainer{
+    width: 100%;
+    height: 90vh;
+    max-height: max-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s linear;
+}
+
+.notfoundContainer > img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    max-width: 100%;
+}

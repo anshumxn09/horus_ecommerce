@@ -5,6 +5,10 @@
   font-family: 'Poppins', sans-serif;
 }
 
+::-webkit-scrollbar-thumb{
+  background-color: #A890FE;
+  height: 10px;
+}
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',

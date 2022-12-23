@@ -1,9 +1,15 @@
 import React from 'react'
-
+import Hero from '../mini components/Hero'
+import Services from '../mini components/Services'
+import Companies from '../mini components/Companies'
+import Featured from '../mini components/Featured'
 const Home = () => {
   return (
     <>  
-        <div>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aspernatur quos velit culpa delectus quaerat rerum, maiores nemo laboriosam asperiores omnis pariatur nostrum exercitationem aliquid alias est. Sint minus officia repudiandae. lorem1000</div>
+      <Hero/>
+      <Featured/>
+      <Services/>
+      <Companies/>
     </>
   )
 }

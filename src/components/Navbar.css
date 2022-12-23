@@ -1,6 +1,6 @@
 .navCont{
-    min-width: 100vw;
-    max-width: 100vw;
+    min-width: 100%;
+    max-width: 100%;
     height: 60px;
     background-color: white;
     display: flex;
@@ -72,7 +72,7 @@
 }
 
 .navHidden{
-    /* transition: all 0.5s ease-in; */
+    transition: all 0.5s ease-in;
     left: -800px;
 }
 
@@ -95,6 +95,7 @@
         flex-direction: column;
         top: 60px;
         transition: all 0.5s linear;
+        /* z-index: 11000000; */
     }
     .routePage > a{
         width: 100%;

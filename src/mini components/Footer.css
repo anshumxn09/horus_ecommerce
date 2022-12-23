@@ -1,0 +1,16 @@
+.footerContainer{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px 0px;
+    background-color: black;
+}
+
+.footerContainer > a{
+    text-decoration: none;
+    color: white;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
