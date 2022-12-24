@@ -1,0 +1,92 @@
+.singleContainer{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 30px;
+    flex-wrap: wrap;
+}
+
+.sImage{
+    padding: 5px;
+}
+.singleContainer > .sImage > img{
+    box-shadow: rgba(240, 46, 170, 0.4) -5px 5px, rgba(240, 46, 170, 0.3) -10px 10px, rgba(240, 46, 170, 0.2) -15px 15px, rgba(240, 46, 170, 0.1) -20px 20px, rgba(240, 46, 170, 0.05) -25px 25px;
+    border-radius: 10px;
+    transition: all 0.5s linear;
+}
+
+.singleContainer > .sImage > img:hover{
+    box-shadow: rgba(87, 41, 70, 0.4) 0px 5px, rgba(240, 46, 170, 0.3) 0px 10px, rgba(240, 46, 170, 0.2) 0px 15px, rgba(240, 46, 170, 0.1) 0px 20px, rgba(240, 46, 170, 0.05) 0px 25px;
+}
+
+.getDetails > *{
+    width: 100%;
+    margin: 2px;
+}
+.getDetails{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 400px;
+    height: max-content;
+    margin-top: 10px;
+}
+
+.colorS{
+    display: flex;
+}
+.colorS > .boxS{
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    margin: 5px;
+    transition: all 0.2s linear;
+}
+
+.lowHigh{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+}
+
+.lowHigh > *{
+    margin: 0px 3px;
+}
+
+.lowHigh > button{
+    background: linear-gradient(#EA8D8D, #A890FE);
+    width: 60px;
+    height: 30px;
+    color: white;
+    font-size: 20px;
+    font-weight: bolder;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+.getDetails > button{
+    background: white;
+    padding: 5px;
+    color: black;
+    text-transform: uppercase;
+    font-size: 20px;
+    border-radius: 20px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    box-shadow: rgba(240, 46, 170, 0.4) 0px 5px, rgba(240, 46, 170, 0.3) 0px 10px, rgba(240, 46, 170, 0.2) 0px 15px, rgba(240, 46, 170, 0.1) 0px 20px, rgba(240, 46, 170, 0.05) 0px 25px;
+    transition: all 0.5s linear;
+}
+
+.getDetails > button:hover{
+    box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
+}
+
+.activatedButton{
+    border: 2px solid darkslateblue;
+    transform: translateY(-3px);
+}

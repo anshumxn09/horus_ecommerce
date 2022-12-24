@@ -1,0 +1,143 @@
+.pContainer{
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.hide{
+    position: absolute;
+    left: -800px;
+    transition: all 0.5 linear;
+}
+
+.mobileView{
+    position: fixed;
+    width: 60%;
+    top: 60px;
+    left: 0;
+    height: 94vh;
+    overflow:auto;
+    color: white;
+    background: linear-gradient(#EA8D8D, #A890FE);
+    padding-bottom: 10px;
+    transition: all 0.5 linear;
+}
+
+.mobileView > i{
+    position: absolute;
+    right: 15px;
+}
+
+.pContainer > button{
+    width: 100%;
+    margin-top: 15px;
+    border-radius: 20px;
+    height: 35px;
+    border: none;
+    outline: none;
+    color: white;
+    background: linear-gradient(#EA8D8D, #A890FE);
+    font-size: 16px;
+}
+.pContainer > input{
+    width: 100%;
+    height: 40px;
+    border: 1px solid black;
+    outline: none;
+    border-radius: 10px;
+    padding: 5px 8px;
+}
+
+.dataContainer{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 10px;
+    /* position: relative; */
+}
+
+.searchFilter{
+    align-self: flex-start;
+    padding: 10px;
+    transition: all 0.5s linear;
+}
+/* .searchFilter  */
+.searchFilter > button{
+    margin-top: 10px;
+    width: 100%;
+    background: linear-gradient(#EA8D8D, #A890FE);
+    color: white;
+    font-size: 15px;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    height: 35px;
+    text-transform: uppercase;
+}
+.struct{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.struct p{
+    box-shadow: none;
+    padding: 5px 3px;
+}
+
+.struct p:hover{
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgb(209, 213, 219) 0px 0px 0px 1px inset;
+}
+.struct > *{
+    width: 100%;
+}
+
+.actualProducts{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+
+/* Featured */
+
+.actualProducts > a > .blocks{
+    margin: 10px 20px;
+    width: 300px;
+    height: 300px;
+    padding: 5px;
+    box-shadow: rgba(240, 46, 170, 0.4) -5px 5px, rgba(240, 46, 170, 0.3) -10px 10px, rgba(240, 46, 170, 0.2) -15px 15px, rgba(240, 46, 170, 0.1) -20px 20px, rgba(240, 46, 170, 0.05) -25px 25px;
+    /* border: 2px solid black; */
+    transition: all 0.5s linear;
+    border-radius: 5px;
+}
+
+.actualProducts > a{
+    text-decoration: none;
+}
+
+.actualProducts > a> .blocks:hover{
+    box-shadow: rgba(240, 46, 170, 0.4) 0px 5px, rgba(240, 46, 170, 0.3) 0px 10px, rgba(240, 46, 170, 0.2) 0px 15px, rgba(240, 46, 170, 0.1) 0px 20px, rgba(240, 46, 170, 0.05) 0px 25px;
+}
+
+.actualProducts > a > .blocks > img{
+    width: 100%;
+    height: 90%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.actualProducts > a >.blocks > .info{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.actualProducts > a > .blocks > .info > *{
+    color: grey;
+}

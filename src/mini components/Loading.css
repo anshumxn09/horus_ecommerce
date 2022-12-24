@@ -1,0 +1,21 @@
+.containerLoading{
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.containerLoading > img{
+    border-radius: 50%;
+    border : 1px solid black;
+    animation : rotateImage 3s linear infinite alternate-reverse
+}
+
+@keyframes rotateImage {
+    0%{
+        transform: rotate(0deg);
+    }100%{
+        transform: rotate(360deg);
+    }
+}

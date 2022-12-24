@@ -5,7 +5,7 @@ import "./Feature.css";
 
 const Featured = () => {
   const { isLoading, featureProducts } = useProductContext();
-  console.log(featureProducts);
+  
   return (
     <div className="featureContainer">
       <h2>Featured Prodcuts</h2>
