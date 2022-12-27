@@ -12,6 +12,9 @@ const initialState = {
         text : "",
         company : "all",
         category : "all",
+        maxPrice : 0,
+        price: 0,
+        minPrice : 0,
     }
 }
 
@@ -19,6 +22,10 @@ export const FilterProvider = ({children}) => {
     const {products, isLoading} = useProductContext();
     const [state, dispatch] = useReducer(reducer, initialState);
 
+    const clearFilters = () => {
+        dispatch({type : "CLEAR_FILTERS"})
+    }
+    
     const sortingFunction = () => {
         dispatch({type : "SORT_DATA"})
     }
@@ -44,7 +51,7 @@ export const FilterProvider = ({children}) => {
     }, [ state.filters])
 
 
-    return <FilterContext.Provider value={{...state, sortingFunction, updateValue}}>{children}</FilterContext.Provider>
+    return <FilterContext.Provider value={{...state, sortingFunction, updateValue, clearFilters}}>{children}</FilterContext.Provider>
 }
 
 export const useFilterContext = () => {

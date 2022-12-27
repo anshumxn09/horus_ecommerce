@@ -7,7 +7,7 @@ import { useFilterContext } from '../context/filterContext';
 
 const Products = () => {
   const {products, isLoading} = useProductContext();
-  const {filterProducts, sortingFunction, filters, updateValue, allProducts} = useFilterContext();
+  const {filterProducts, sortingFunction, filters, updateValue, allProducts, clearFilters} = useFilterContext();
   const [windowSize, setWindowSize] = useState(window.innerWidth);
   const [hide, setHide] = useState("hide");
 
@@ -64,36 +64,32 @@ const Products = () => {
             </div>
             <div className="company struct">
               <h3>Companies</h3>
-              {
-                companySide.map((elem, index) => {
-                  return <button
-                    key={index}
-                    type="button"
-                    name='company'
-                    value={elem}
-                    onClick={updateValue}
-                  >{elem}</button>
-                })
-              }
-            </div>
-            <div className="colors struct">
-              <h3>Colors</h3>
-              <p>All</p>
-              <p>Mobile</p>
-              <p>Laptop</p>
-              <p>Computer</p>
-              <p>Accessories</p>
-              <p>Watch</p>
+              <form>
+                <select name="company" id="company" onClick={updateValue}>
+                  {
+                    companySide.map((elem, index) => {
+                      return <option value={elem} key={index}>{elem}</option>
+                    })
+                  }
+                </select>
+              </form>
             </div>
             <div className="myprice struct">
               <h3>Price</h3>
-              <span>0</span>
-              <input type="range"/>
+              <span>{Intl.NumberFormat("en-IN", {
+                    style : "currency",
+                    currency : "INR",
+                    maximumFractionDigits : 2,
+                }).format(filters.price/100)}</span>
+              <input type="range" name='price' value={filters.price} min={filters.minPrice} max={filters.maxPrice} onChange={updateValue}/>
             </div>
-            <button>Clear Filters</button>
+            <button type='button' onClick={clearFilters}>Clear Filters</button>
           </div>
           <div className="actualProducts">
-          {filterProducts.map((elem, index) => {
+          {
+            filterProducts.length > 0 ? <h1></h1> : <h1>No Products Available</h1>
+          }
+          { filterProducts.map((elem, index) => {
           return (
             <Link to={`/details/${elem.id}`}>
             <div className="blocks" key={index}>

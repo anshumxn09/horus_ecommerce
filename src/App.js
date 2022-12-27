@@ -9,6 +9,7 @@ import NotFound from './components/NotFound';
 import ProductDetails from './components/ProductDetails';
 import Products from './components/Products';
 import Footer from './mini components/Footer';
+import MoveToTop from './mini components/MoveToTop';
 const App = () => {
   return (
     <Router>
@@ -23,6 +24,7 @@ const App = () => {
         <Route path='*' element={<NotFound/>}/>
       </Routes>
       <Footer/>
+      <MoveToTop/>
     </Router>
   )
 }

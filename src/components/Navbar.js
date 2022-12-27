@@ -1,8 +1,10 @@
 import React, { useState } from 'react'
 import './Navbar.css';
 import { Link } from 'react-router-dom';
+import { useCartContext } from '../context/cartContext';
 
 const Navbar = () => {
+  const {cart} = useCartContext();
   const [hamburger, setHamburger] = useState(true);
   const [responsive, setResponsive] = useState("navHidden");
 
@@ -34,7 +36,7 @@ const Navbar = () => {
             <Link to={"/contact"} onClick={makeHidden}>Contact</Link>
             <div className="cartDesign">
             <Link to={"/cart"} className="cartDesgin" onClick={makeHidden}><i className="fa-solid fa-cart-shopping" /></Link>
-            <span className='cartCount'>0</span>
+            <span className='cartCount'>{cart.length}</span>
             </div>
           </div>
       </div>

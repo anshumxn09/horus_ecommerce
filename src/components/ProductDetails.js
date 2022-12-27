@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useProductContext } from "../context/productContext";
+import { useCartContext } from "../context/cartContext";
 import Loading from "../mini components/Loading";
 import "./ProductDetails.css";
 
@@ -10,6 +11,7 @@ const ProductDetails = () => {
   useProductContext();
   const [color, setColor] = useState(null);
   const [quantity, setQuantity] = useState(1);
+  const {addToCart} = useCartContext();
 
   const setIncrease = () => {
       if(quantity < singleProduct.stock) setQuantity(quantity+1);
@@ -22,10 +24,12 @@ const ProductDetails = () => {
   useEffect(() => {
     const SINGLE_API = `https://api.pujakaitem.com/api/products?id=${id}`;
     getSingleProduct(SINGLE_API);
-    if(Object.keys(singleProduct).length >= 1) setColor(singleProduct.colors[0]);
+    if(Object.keys(singleProduct).length >= 1) {
+      setColor(singleProduct.colors[0]);
+    }
   }, []);
 
-  if (isSingleLoading || Object.keys(singleProduct).length <= 1) {
+  if (isSingleLoading || Object.keys(singleProduct).length  < 1) {
     return <Loading />;
   }
 
@@ -79,7 +83,7 @@ const ProductDetails = () => {
               <span>{quantity}</span>
               <button onClick={setIncrease}>+</button>
             </div>
-            <button>ADD TO CART</button>
+            <Link to={"/cart"}><button type="button" onClick={() => addToCart(id, singleProduct, color, quantity)}>ADD TO CART</button></Link>
           </>
         ) : (
           <></>
@@ -89,17 +93,5 @@ const ProductDetails = () => {
   );
 };
 
+// onClick={() => addingToCart(id, singleProduct, color, quantity)}
 export default ProductDetails;
-
-{
-  /* <div className="colorS">
-          <span style={{color: "gray"}}>Color : </span>{singleProduct.company}
-          {
-            {/* singleProduct.colors.map((elem, index) => {
-              return (
-                <div className="boxS" width='10px' height='10px' style={{borderRadius : '50%', color: elem}}></div>
-              )
-            }) */
-}
-// }
-// </div> */

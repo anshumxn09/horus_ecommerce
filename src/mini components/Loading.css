@@ -19,3 +19,10 @@
         transform: rotate(360deg);
     }
 }
+
+@media screen  and (max-width : 400px){
+    .containerLoading > img{
+        width: 220px;
+        height: 220px;
+    }
+}

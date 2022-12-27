@@ -1,0 +1,139 @@
+.cartContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    flex-direction: column;
+}
+
+.btnsBlocks{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.btnsBlocks > a{
+    text-decoration: none;
+    text-transform: uppercase;
+    color: white;
+    background: linear-gradient(#EA8D8D, #A890FE);
+    padding: 2px 8px;
+    border-radius: 20px;
+
+}
+
+.miniBlock{
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.shippinInfo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: max-content;
+    background-color: lightgray;
+    max-width: max-content;
+    min-width: 250px;
+    padding: 10px;
+    border-radius: 9px;
+}
+
+.shippinInfo > hr{
+    width: 100%;
+    height: 2px;
+    background-color: black;
+}
+.shippinInfo > .subTotal{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+}
+.designB{
+    width: 100%;
+    text-align: center;
+    background-color: lightgreen;
+    border-radius: 20px;
+    padding: 2px 8px;
+}
+
+.cartItems > *{
+    text-transform: uppercase;
+}
+.quantityB{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.quantityB > button{
+    padding: 2px 15px;
+    cursor: pointer;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    background: linear-gradient(#EA8D8D, #A890FE);
+    color: white;
+}
+
+.closeBTN{
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    color: red;
+    font-size: 18px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.descB{
+    width: 200px;
+    height: 200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
+.descB > *{
+    width: 100%;
+    margin: 7px 0px;
+}
+.cartItems{
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border: 1px solid black;
+    padding: 10px 20px;
+}
+.imageB {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cartItems > .imageB > img{
+    border-radius: 10px;
+    box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
+    margin: 0;
+    object-fit: cover;
+}
+
+@media screen and (max-width:510px) {
+    .cartItems{
+        flex-direction: column;
+    }
+    .descB{
+        margin-top: 5px;
+    }
+}

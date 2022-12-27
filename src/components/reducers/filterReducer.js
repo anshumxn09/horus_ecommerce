@@ -1,32 +1,18 @@
 const FilterReducer = (state, action) => {
   switch (action.type) {
-    // case 'INPUT_DATA':
-    //     let tempdata = [...state.allProducts];
-    //     if(state.text){
-    //         tempdata = tempdata.filter((elem) => {
-    //             return elem.name.toLowerCase().includes(state.text);
-    //         })
-    //     }
-    //     if(state.category != "ALL"){
-    //         tempdata = tempdata.filter((elem) => {
-    //             return state.category === elem.category;
-    //         })
-    //     }
-    //     return {
-    //         ...state,
-    //         filterProducts : tempdata,
-    //     }
-    // case 'COMP_DATA':
-    //     let myData = [...state.allProducts];
-    //     if(state.company){
-    //         myData = myData.filter((elem) => {
-    //             return state.company === elem.company;
-    //         })
-    //     }
-    //     return {
-    //         ...state,
-    //         filterProducts : myData,
-    //     }
+    case 'CLEAR_FILTERS':
+      return {
+        ...state,
+        filters :{
+          ...state.filters,
+          text : "",
+          company : "all",
+          category : "all",
+          mixPrice : 0,
+          price: state.filters.maxPrice,
+          maxPrice : state.filters.maxPrice,
+      }
+      }
     case "VAL_UP":
       return {
         ...state,
@@ -37,10 +23,19 @@ const FilterReducer = (state, action) => {
       };
 
     case "FILTER_PRODUCTS":
+      let priceArr = action.payload.map((elem) => {
+        return elem.price;
+      })
+      const maxPrice = Math.max(...priceArr)
       return {
         ...state,
         filterProducts: [...action.payload],
         allProducts: [...action.payload],
+        filters : {
+          ...state.filters,
+          maxPrice : maxPrice,
+          price : maxPrice
+        }
       };
     case "SORT_DATA":
       const valueSelection = document.getElementById("sort");
@@ -87,7 +82,7 @@ const FilterReducer = (state, action) => {
       let { allProducts } = state;
       let temporary = [...allProducts];
 
-      const { text, category, company } = state.filters;
+      const { text, category, company, price } = state.filters;
 
       if (text) {
         temporary = temporary.filter((elem) => {
@@ -95,16 +90,28 @@ const FilterReducer = (state, action) => {
         });
       }
 
-      if (company != "all") {
+      if (company !== "all") {
         temporary = temporary.filter((elem) => {
           return elem.company.toLowerCase() === company;
         });
       }
-      console.log(category);
-      if (category != "all") {
+
+      if (category !== "all") {
         temporary = temporary.filter((elem) => {
           return elem.category === category;
         });
+      }
+
+      if(price === 0){
+        temporary = temporary.filter((elem) => {
+          return elem.price === price
+        })
+      }
+
+      if(price){
+        temporary = temporary.filter((elem) => {
+          return elem.price <= price
+        })
       }
 
       return {

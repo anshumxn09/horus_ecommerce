@@ -58,7 +58,6 @@
     justify-content: space-between;
     align-items: center;
     height: max-content;
-    padding: 10px;
     position: relative;
 }
 
@@ -67,6 +66,15 @@
     padding: 10px;
     transition: all 0.5s linear;
 }
+
+.struct > input[type="range"]{
+    -webkit-appearance: none;
+    background-color: #EA8D8D;
+    border-radius: 10px;
+    color: #A890FE;
+}
+
+
 
 /* .searchFilter  */
 .searchFilter > button{
@@ -96,6 +104,16 @@
     background-color: transparent;
     border: none;
     outline: none;
+    font-size: 16px;
+}
+
+.struct > form {
+    width: 100%;
+    padding: 0;
+}
+.struct > form > select{
+    width: 100%;
+    text-transform: uppercase;
 }
 
 .struct button:hover{
@@ -127,10 +145,15 @@
     padding: 2px 5px;
     text-transform: uppercase;
     border-radius: 15px;
+    padding: 2px 5px;
+    font-size: 16px;
 }
 
 /* Featured */
 
+.actualProducts > h1{
+    text-align: center;
+}
 .actualProducts > a > .blocks{
     margin: 10px 20px;
     width: 300px;

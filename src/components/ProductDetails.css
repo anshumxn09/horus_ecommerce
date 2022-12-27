@@ -68,7 +68,7 @@
     cursor: pointer;
 }
 
-.getDetails > button{
+.getDetails > a > button{
     background: white;
     padding: 5px;
     color: black;
@@ -80,9 +80,10 @@
     cursor: pointer;
     box-shadow: rgba(240, 46, 170, 0.4) 0px 5px, rgba(240, 46, 170, 0.3) 0px 10px, rgba(240, 46, 170, 0.2) 0px 15px, rgba(240, 46, 170, 0.1) 0px 20px, rgba(240, 46, 170, 0.05) 0px 25px;
     transition: all 0.5s linear;
+    width: 100%;
 }
 
-.getDetails > button:hover{
+.getDetails > a > button:hover{
     box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
 }
 
