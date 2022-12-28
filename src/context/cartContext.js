@@ -22,6 +22,16 @@ const initialState = {
 const CartProvider = ({children}) => {
     const [state, dispatch] = useReducer(reducer, initialState);
 
+    const makePayment = () => {
+        let value = window.prompt('Enter Shipping Address : ');
+        if(value.length >= 8){
+            setTimeout(() => {
+                window.alert('Your Order Will Be Placed At '+ value);
+                dispatch({type : 'CLEAR_CART'})
+            }, 1500)
+        }
+    }
+
     const addToCart = (id, singleProduct, color, quantity) => {
         dispatch({type : 'ADD_TO_CART', payload : {id, singleProduct, color, quantity}});
     }
@@ -49,7 +59,7 @@ const CartProvider = ({children}) => {
         localStorage.setItem('cartValue', JSON.stringify(state.cart));
     }, [state.cart])
 
-    return <CartContext.Provider value={{...state, addToCart, removeItem, clearCart, addOne, minusOne}}>{children}</CartContext.Provider>
+    return <CartContext.Provider value={{...state, addToCart, removeItem, clearCart, addOne, minusOne, makePayment}}>{children}</CartContext.Provider>
 }
 
 const useCartContext = () => {

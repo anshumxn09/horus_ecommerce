@@ -1,8 +1,11 @@
 import React, { useState } from 'react'
 import './Footer.css';
+// import {BsLinkedin} from 'react-icons/bs';
+import {AiFillGithub, AiFillMail, AiFillLinkedin} from 'react-icons/ai';
+import {RiEarthFill} from 'react-icons/ri';
 
 const Footer = () => {
-  const [help, setHelp] = useState(["Track Your Order"
+  const [help] = useState(["Track Your Order"
     ,"Warranty & Support"
     ,"Return Policy"
     ,"Service Centers"
@@ -10,8 +13,8 @@ const Footer = () => {
     ,"FAQs"
     ,"Why buy direct"])
   
-  const [company, setCompany] = useState([
-    ,"News"
+  const [company] = useState([
+    "News"
     ,"Read our Blog"
     ,"Careers"
     ,"Security"
@@ -20,11 +23,16 @@ const Footer = () => {
     ,'Investor Relations'
   ])
   return (
-    <div className="footerContainer" title="CLICK Here TO MAIL">
+    <div className="footerContainer" >
         <div className="logoBox">
           <h3>HORUS</h3>
           <p>A Complete View Of Shopping</p>
-          {/* <a href="mailto:sharmaaanshumaan@gmail.com"><i class="fa-solid fa-envelope"></i></a> */}
+          <div className="socialIcons">
+          <a href="https://github.com/anshumxn09"><AiFillGithub className='myIcons'/></a>
+          <a href="https://www.linkedin.com/in/anshumxn09/"><AiFillLinkedin className='myIcons'/></a>
+          <a href="mailto:sharmaaanshumaan@gmail.com"><AiFillMail className='myIcons'/></a>
+          <a href="https://anshumxnportfolio.netlify.app/"><RiEarthFill className='myIcons'/></a>
+          </div>
         </div>
         <div className="similarContent">
           <h3>Help</h3>

@@ -10,14 +10,38 @@
     flex-wrap: wrap;
 }
 
+.socialIcons > a{
+    color: white;
+    margin-right: 15px;
+}
+
+.myIcons{
+    width: 30px;
+    height: 40px;
+}
+
+.myIcons:hover{
+    color: #A890FE;
+    transition: all 0.5s linear;
+    transform: scale(1.1);
+}
+
+.socialIcons{
+    max-width: max-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
 .footerContainer > .logoBox{
     align-self: flex-start;
     color: white;
     font-size: 20px;
     display: flex;
     justify-content: space-evenly;
-    align-items: center;
+    /* align-items: center; */
     flex-direction: column;
+    position: relative;
 }
 
 .logoBox > p{
@@ -31,8 +55,8 @@
 
 .logoBox >a:hover{
     background: -webkit-linear-gradient(#EA8D8D, #A890FE);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 .similarContent{
     min-width: 300px;

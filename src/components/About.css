@@ -1,0 +1,19 @@
+.aboutContainer{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 25px;
+}
+
+.aboutContainer > img{
+    border-radius: 50%;
+    border: 2px solid black;
+    animation: upNUP 2s linear infinite alternate-reverse;
+}
+
+.aboutContainer > p{
+    text-align: justify;
+    margin-top: 20px;
+    width: 450px;
+}

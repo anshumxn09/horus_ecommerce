@@ -4,13 +4,13 @@ import "./Cart.css";
 import { Link, useNavigate } from "react-router-dom";
 const Cart = () => {
   const navigate = useNavigate();
-  const { cart, removeItem , clearCart, addOne, minusOne, total_amount, shipping_fee} = useCartContext();
+  const { cart, removeItem , clearCart, addOne, minusOne, total_amount, shipping_fee, makePayment} = useCartContext();
   // console.log(cart)
   useEffect(() => {
     if(cart.length === 0){
       navigate('/products');
     }
-  }, [cart])
+  }, [cart, navigate])
   return (
     <div className="cartContainer">
       {cart.map((elem) => {
@@ -81,6 +81,9 @@ const Cart = () => {
                   currency: "INR",
                   maximumFractionDigits: 2,
                 }).format((shipping_fee + total_amount)/100)}</p>
+        </div>
+        <div className="makePayment">
+          <img src="https://cdn.pixabay.com/photo/2015/05/26/09/37/paypal-784404_1280.png" alt="" width={100} height={50} onClick={makePayment} style={{cursor : "pointer"}}/>
         </div>
       </div>
     </div>

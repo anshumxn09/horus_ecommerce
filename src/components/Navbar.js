@@ -19,6 +19,7 @@ const Navbar = () => {
     setHamburger(true);
     responsive("navHidden");
   }
+
   return (
       <div className="navCont">
           <div className="navlogo">
@@ -36,7 +37,9 @@ const Navbar = () => {
             <Link to={"/contact"} onClick={makeHidden}>Contact</Link>
             <div className="cartDesign">
             <Link to={"/cart"} className="cartDesgin" onClick={makeHidden}><i className="fa-solid fa-cart-shopping" /></Link>
-            <span className='cartCount'>{cart.length}</span>
+            <span className='cartCount'>{
+              cart !== null ? cart.length : 0
+            }</span>
             </div>
           </div>
       </div>
