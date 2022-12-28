@@ -8,7 +8,7 @@ const Featured = () => {
   
   return (
     <div className="featureContainer">
-      <h2>Featured Prodcuts</h2>
+      <h2>Featured Products</h2>
       <div className="productsContainer">
         {featureProducts.map((elem, index) => {
           return (

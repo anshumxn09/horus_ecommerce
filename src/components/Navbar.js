@@ -17,7 +17,7 @@ const Navbar = () => {
 
   const makeHidden = () => {
     setHamburger(true);
-    responsive("navHidden");
+    setResponsive("navHidden");
   }
 
   return (
@@ -30,10 +30,10 @@ const Navbar = () => {
               hamburger ? <i className="fa-solid fa-bars" />: <i class="fa-solid fa-xmark" />
             }
           </div>
-          <div className={`routePage ${responsive}`}>
-            <Link to={"/"} onClick={makeHidden}>Home</Link>
+          <div className={`routePage ${responsive}`} onClick={makeHidden}>
+            <Link to={"/"}>Home</Link>
             <Link to={"/about"} onClick={makeHidden}>About</Link>
-            <Link to={"/products"} onClick={makeHidden}>Products</Link>
+            <Link to={"/products"} onClick={makeHidden} >Products</Link>
             <Link to={"/contact"} onClick={makeHidden}>Contact</Link>
             <div className="cartDesign">
             <Link to={"/cart"} className="cartDesgin" onClick={makeHidden}><i className="fa-solid fa-cart-shopping" /></Link>

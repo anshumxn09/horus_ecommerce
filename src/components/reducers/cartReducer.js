@@ -1,4 +1,5 @@
 const CartReducer = (state, action) => {
+    if(state.cart)
     switch(action.type){
         case 'TOTAL_MONEY':
             let money = state.cart.reduce((sum, elem) => {
